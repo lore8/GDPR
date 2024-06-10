@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuestionario de Cumplimiento GDPR</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js" defer></script>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center mb-4">Cuestionario de Cumplimiento GDPR</h1>
+      <form id="gdprForm">
+        <div class="form-group">
+          <label for="company">Empresa:</label>
+          <input
+            type="text"
+            id="company"
+            name="company"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="employees">Cantidad de Empleados</label>
+          <select class="form-control" id="employees" name="employees" required>
+            <option value="" disabled selected>Seleccione una opción</option>
+            <option value="1-10">1-10</option>
+            <option value="11-50">11-50</option>
+            <option value="51-250">51-250</option>
+            <option value="251+">251+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="email">Correo de contacto:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            required
+          />
+        </div>
+        <div id="questionsContainer"></div>
+        <div class="form-group form-check">
+          <input
+            type="checkbox"
+            id="consent"
+            name="consent"
+            class="form-check-input"
+            required
+          />
+          <label class="form-check-label" for="consent"
+            >Autorizo el tratamiento estadístico de estos datos y acepto ser
+            contactado por esta entidad para fines relacionados con estos
+            servicios.</label
+          >
+        </div>
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-primary">
+            Enviar Formulario
+          </button>
+          <button type="reset" class="btn btn-secondary ml-2">Cancelar</button>
+        </div>
+      </form>
+      <div class="text-center mt-4">
+        <a href="politica_privacidad.html" target="_blank"
+          >Política de Privacidad</a
+        >
+        <span> | </span>
+        <a href="aviso_cookies.html" target="_blank">Aviso de Cookies</a>
+      </div>
+    </div>
+  </body>
+</html>
