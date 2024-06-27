@@ -13,7 +13,7 @@ connectDB();
 
 app.use(
   cors({
-    origin: "http://127.0.0.1:5500", // Reemplaza con la URL de tu frontend
+    origin: "http://192.168.10.137", // Reemplaza con la URL de tu frontend
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })

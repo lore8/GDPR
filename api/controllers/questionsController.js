@@ -19,8 +19,8 @@ exports.postQuestions = async (req, res) => {
       return res.status(400).json({ error: "Faltan datos obligatorios" });
 
     let prompt = `
-    ¿Necesito un análisis detallado de las debilidades y recomendaciones basado en las respuestas de este formulario de autoevaluación GDPR. 
-    Me gustaría recibir un informe detallado en html, debe contener un puntaje de 0 a 10 en base al analisis, el puntaje debe estar luego de los datos base. 
+    Necesito un análisis detallado de las debilidades y recomendaciones basado en las respuestas de este formulario de autoevaluación GDPR. 
+    Me gustaría recibir un informe detallado en html, debe contener un porcentaje de 1 a 100% en base a tu análisis y fundamento. En el ítem de Debilidades y recomendaciones debes ser detallado en tu análisis en base a cada una de las respuestas entregadas(no debes mostrar las preguntas y las respuestas solo el análisis para cada una de ellas), debes agregar enter formato html para enlistar la respuesta por cada númeral. 
     Empresa: ${company}
     Número de empleados: ${employees}
     Correo electrónico: ${email}
@@ -31,15 +31,14 @@ exports.postQuestions = async (req, res) => {
       `;
     });
 
-    prompt += `El formato del informe debe ser el siguiente:
+    prompt += `El formato del informe debe ser el siguiente, se deja referencia de como se prefiere el formato html:
     <h2>Informe de autoevaluación GDPR</h2>
     <p>Empresa: ${company}</p>
     <p>Número de empleados: ${employees}</p>
     <p>Correo electrónico: ${email}</p>
-    <h3>Puntaje: x.x</h3>
+    <h3>Porcentaje de cumplimiento: xx%</h3>
     <h3>Debilidades y recomendaciones:</h3>
-    <h3>Resumen Preguntas:</h3>
-    <h3>Preguntas y Respuestas:</h3>
+    <h3>Resumen de Análisis:</h3>
     `;
 
     const completion = await openaiService.getCompliance(prompt);

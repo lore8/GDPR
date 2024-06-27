@@ -27,7 +27,7 @@ $(document).ready(function () {
           groupedQuestions[section].forEach(function (question, index) {
             $("#questionsContainer .section:last-child").append(`
                           <div class="form-group">
-                              <p>${question.question} (${question.article})</p>
+                             <p>${question.question} (<a href="${question.article_url}" target="_blank">${question.article}</a>)</p>
                               <div class="form-check">
                                   <input class="form-check-input" type="radio" id=${question._id} name=${question._id} value="Sí" required>
                                   <label class="form-check-label">Sí</label>
